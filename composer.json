@@ -1,0 +1,23 @@
+{
+	"name": "stevewest/entity-manager",
+	"type": "library",
+	"description": "Basic framework for managing entities in an application",
+	"keywords": ["Entity management", "crud"],
+	"homepage": "https://github.com/stevewest/entity-manager",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Steve \"Uru\" West",
+			"email": "uruwolf@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"require-dev": {
+		"codeception/codeception": "1.8"
+	},
+	"autoload": {
+		"psr-4": { "EntityManager\\": "src/" }
+	}
+}
