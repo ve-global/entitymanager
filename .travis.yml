@@ -13,6 +13,3 @@ script:
 
 after_script:
   - php ocular.phar code-coverage:upload --format=php-clover tests/_log/coverage.xml
-
-notifications:
-  irc: "irc.freenode.org#fuelphp-status"
