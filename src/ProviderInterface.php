@@ -17,4 +17,12 @@ namespace EntityManager;
  */
 interface ProviderInterface
 {
+
+	/**
+	 * Gets the names of the actions this provider can perform
+	 *
+	 * @return string[]
+	 */
+	public function getActions();
+
 }
