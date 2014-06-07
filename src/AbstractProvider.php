@@ -18,6 +18,11 @@ namespace EntityManager;
 class AbstractProvider implements ProviderInterface
 {
 
+	/**
+	 * Contains a list of methods that a provider could possibly expose.
+	 *
+	 * @var string[]
+	 */
 	protected $routableMethods = [
 		'create',
 		'get',

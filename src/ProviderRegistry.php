@@ -73,4 +73,18 @@ class ProviderRegistry
 		return array_keys($this->providers);
 	}
 
+	/**
+	 * Gets a constructed instance of a provider
+	 *
+	 * @param string $uri
+	 *
+	 * @return ProviderInterface
+	 */
+	public function getProviderInstance($uri)
+	{
+		$providerClass = $this->getProvider($uri);
+
+		return new $providerClass;
+	}
+
 }

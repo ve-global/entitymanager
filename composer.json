@@ -15,7 +15,8 @@
 		"php": ">=5.3.3"
 	},
 	"require-dev": {
-		"codeception/codeception": "1.8"
+		"codeception/codeception": "1.8",
+		"codeception/mockery-module": "dev-master"
 	},
 	"autoload": {
 		"psr-4": { "EntityManager\\": "src/" }

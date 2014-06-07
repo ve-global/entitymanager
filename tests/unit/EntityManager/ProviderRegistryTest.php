@@ -78,5 +78,17 @@ class ProviderRegistryTest extends Test
 		);
 	}
 
+	public function testGetInstance()
+	{
+		$uri = 'some/entity';
+		$provider = 'EntityManager\BasicProviderStub';
+
+		$this->registry->registerProvider($uri, $provider);
+
+		$this->assertInstanceOf(
+			$provider,
+			$this->registry->getProviderInstance($uri)
+		);
+	}
 
 }
