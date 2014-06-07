@@ -1,7 +1,6 @@
 <?php
 /**
  * @package   EntityManager
- * @version   1.0
  * @author    Steve "Uru" West
  * @license   MIT License
  * @copyright 2014 Steve "Uru" West
@@ -15,7 +14,7 @@ namespace EntityManager;
  *
  * @package EntityManager
  * @author  Steve "Uru" West
- * @since
+ * @since   1.0
  */
 class Test
 {
