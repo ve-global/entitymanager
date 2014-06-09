@@ -1,13 +1,12 @@
 <?php
 /**
- * @package   EntityManager
- * @author    Steve "Uru" West <uruwolf@gmail.com>
- * @license   MIT License
- * @copyright 2014 Steve "Uru" West
- * @link      http://github.com/stevewest/entity-manager
+ * @author VeDev Team Kraken
+ * @license Closed source, do not copy or distribute in any form.
+ * @copyright 2014 Ve Interactive Ltd.
+ * @link http://veinteractive.com
  */
 
-namespace EntityManager;
+namespace Ve\EntityManager;
 
 use Codeception\TestCase\Test;
 
@@ -15,9 +14,8 @@ use Codeception\TestCase\Test;
  * Class ProviderRegistryTest
  *
  * @package EntityManager
- * @author  Steve "Uru" West <uruwolf@gmail.com>
  *
- * @coversDefaultClass EntityManager\ProviderRegistry
+ * @coversDefaultClass Ve\EntityManager\ProviderRegistry
  */
 class ProviderRegistryTest extends Test
 {
@@ -55,7 +53,7 @@ class ProviderRegistryTest extends Test
 
 	/**
 	 * @group             EntityManager
-	 * @expectedException \EntityManager\UnknownProviderException
+	 * @expectedException \Ve\EntityManager\UnknownProviderException
 	 */
 	public function testGettingAnInvalidProvider()
 	{
@@ -81,7 +79,7 @@ class ProviderRegistryTest extends Test
 	public function testGetInstance()
 	{
 		$uri = 'some/entity';
-		$provider = 'EntityManager\BasicProviderStub';
+		$provider = 'Ve\EntityManager\BasicProviderStub';
 
 		$this->registry->registerProvider($uri, $provider);
 

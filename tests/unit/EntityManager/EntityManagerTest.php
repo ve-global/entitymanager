@@ -1,13 +1,12 @@
 <?php
 /**
- * @package   EntityManager
- * @author    Steve "Uru" West <uruwolf@gmail.com>
- * @license   MIT License
- * @copyright 2014 Steve "Uru" West
- * @link      http://github.com/stevewest/entity-manager
+ * @author VeDev Team Kraken
+ * @license Closed source, do not copy or distribute in any form.
+ * @copyright 2014 Ve Interactive Ltd.
+ * @link http://veinteractive.com
  */
 
-namespace EntityManager;
+namespace Ve\EntityManager;
 
 use Codeception\TestCase\Test;
 
@@ -27,7 +26,7 @@ class EntityManagerTest extends Test
 	protected function _before()
 	{
 		/** @var ProviderRegistry $registry */
-		$this->registry = \Mockery::mock('EntityManager\ProviderRegistry');
+		$this->registry = \Mockery::mock('Ve\EntityManager\ProviderRegistry');
 		$this->manager = new EntityManager($this->registry);
 	}
 

@@ -1,13 +1,12 @@
 <?php
 /**
- * @package   EntityManager
- * @author    Steve "Uru" West <uruwolf@gmail.com>
- * @license   MIT License
- * @copyright 2014 Steve "Uru" West
- * @link      http://github.com/stevewest/entity-manager
+ * @author VeDev Team Kraken
+ * @license Closed source, do not copy or distribute in any form.
+ * @copyright 2014 Ve Interactive Ltd.
+ * @link http://veinteractive.com
  */
 
-namespace EntityManager;
+namespace Ve\EntityManager;
 
 class BasicProviderStub extends AbstractProvider
 {
