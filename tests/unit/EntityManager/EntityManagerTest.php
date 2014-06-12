@@ -81,4 +81,12 @@ class EntityManagerTest extends Test
 		);
 	}
 
+	public function testGetEntityUrl()
+	{
+		$this->assertEquals(
+			'product/1',
+			$this->manager->getEntityUrl('product:1')
+		);
+	}
+
 }

@@ -95,4 +95,17 @@ class EntityManager
 		];
 	}
 
+	/**
+	 * Returns the URL that can be used to access this entity. This is an actual URL (sans base site name) that the user
+	 * can use to access the entity.
+	 *
+	 * @param string $uri
+	 *
+	 * @return string
+	 */
+	public function getEntityUrl($uri)
+	{
+		return str_replace(':', '/', $uri);
+	}
+
 }
