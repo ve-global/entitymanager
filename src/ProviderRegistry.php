@@ -22,6 +22,13 @@ class ProviderRegistry
 	protected $providers = [];
 
 	/**
+	 * Contains a list of constructed provider objects.
+	 *
+	 * @var ProviderInterface
+	 */
+	protected $constructedProviders = [];
+
+	/**
 	 * Registers a new entity provider
 	 *
 	 * @param string $uri
@@ -80,9 +87,12 @@ class ProviderRegistry
 	 */
 	public function getProviderInstance($uri)
 	{
-		$providerClass = $this->getProvider($uri);
+		if ( ! array_key_exists($uri, $this->constructedProviders))
+		{
+			$this->constructedProviders[$uri] = $this->getProvider($uri);
+		}
 
-		return new $providerClass;
+		return new $this->constructedProviders[$uri];
 	}
 
 }
