@@ -8,11 +8,13 @@
 
 namespace Ve\EntityManager;
 
+use RuntimeException;
+
 /**
- * UnknownProviderException
+ * Should be thrown when a entity or part of a entity URI cannot be resolved.
  *
- * @package EntityManager
+ * @package Ve\EntityManager
  */
-class UnknownProviderException extends ResolutionException
+class ResolutionException extends RuntimeException
 {
 }

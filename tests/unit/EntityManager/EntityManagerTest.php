@@ -42,20 +42,43 @@ class EntityManagerTest extends Test
 		);
 	}
 
-	public function testPerformAction()
+	public function testGetUriParts()
 	{
-		$uri = 'foobar';
-		$provider = new BasicProviderStub;
+		$uri = 'product:1';
 
-		$this->registry
-			->shouldReceive('getProviderInstance')
-			->with($uri)
-			->andReturn($provider);
-
-		$this->assertTrue(
-			$this->manager->performAction($uri, 'create')
+		$this->assertEquals(
+			[
+				'type' => 'product',
+				'identifier' => 1,
+			],
+			$this->manager->getURIParts($uri)
 		);
 	}
 
+	/**
+	 * @expectedException \Ve\EntityManager\InvalidURIException
+	 */
+	public function testGetUriPartsWithInvalidUri()
+	{
+		$uri = 'product';
+		$this->manager->getURIParts($uri);
+	}
+
+	public function testGetEntity()
+	{
+		$type = 'product';
+		$id = 1;
+		$uri = "$type:$id";
+
+		$this->registry->shouldReceive('getProvider')
+			->with($type)
+			->andReturn(new DataProviderStub)
+			->once();
+
+		$this->assertEquals(
+			['This is the first entity'],
+			$this->manager->getEntity($uri)
+		);
+	}
 
 }

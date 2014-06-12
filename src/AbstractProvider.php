@@ -49,4 +49,16 @@ class AbstractProvider implements ProviderInterface
 		return $actions;
 	}
 
+	/**
+	 * Checks if the provider can satisfy the given method
+	 *
+	 * @param string $method
+	 *
+	 * @return bool
+	 */
+	public function canProvide($method)
+	{
+		return in_array($method, $this->getActions());
+	}
+
 }

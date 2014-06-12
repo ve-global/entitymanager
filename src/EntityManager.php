@@ -38,14 +38,53 @@ class EntityManager
 		$this->registry = $registry;
 	}
 
-	public function performAction($uri, $action, $data = null)
+	/**
+	 * Tries to get an entity based on URI and identifier.
+	 *
+	 * @param string $uri Expects a format like 'product:1'
+	 *
+	 * @return mixed
+	 *
+	 * @throws EntityNotReadableException
+	 */
+	public function getEntity($uri)
 	{
-		$instance = $this->registry->getProviderInstance($uri);
+		$uriParts = $this->getURIParts($uri);
 
-		// TODO: check if the action actually exists
+		// Get our provider
+		/** @var AbstractProvider $provider */
+		$provider = $this->getRegistry()->getProvider($uriParts['type']);
 
-		return $instance->{$action}();
+		// Check we can read it
+		if ( ! $provider->canProvide('getOne'))
+		{
+			throw new EntityNotReadableException('Entities of type ' . $uriParts['type'] . ' are not readable.');
+		}
+
+		// Try and load an entity
+		return $provider->getOne($uriParts['identifier']);
 	}
 
+	/**
+	 * Returns the entity type and identifier specified in the URI
+	 *
+	 * @param string $uri
+	 *
+	 * @return array
+	 */
+	public function getURIParts($uri)
+	{
+		$parts = explode(':', $uri);
+
+		if (count($parts) <= 1)
+		{
+			throw new InvalidURIException('The URI: '.$uri.' is not a valid entity URI');
+		}
+
+		return [
+			'type' => $parts[0],
+			'identifier' => $parts[1],
+		];
+	}
 
 }

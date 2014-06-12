@@ -9,10 +9,10 @@
 namespace Ve\EntityManager;
 
 /**
- * UnknownProviderException
+ * Should be thrown if the entity provider is not able to read entities
  *
- * @package EntityManager
+ * @package Ve\EntityManager
  */
-class UnknownProviderException extends ResolutionException
+class EntityNotReadableException extends ResolutionException
 {
 }
