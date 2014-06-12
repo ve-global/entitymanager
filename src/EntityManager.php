@@ -46,6 +46,7 @@ class EntityManager
 	 * @return mixed
 	 *
 	 * @throws EntityNotReadableException
+	 * @throws UnknownEntityException
 	 */
 	public function getEntity($uri)
 	{
@@ -62,7 +63,14 @@ class EntityManager
 		}
 
 		// Try and load an entity
-		return $provider->getOne($uriParts['identifier']);
+		$entity = $provider->getOne($uriParts['identifier']);
+
+		if ($entity === null)
+		{
+			throw new UnknownEntityException($uriParts['identifier'] . ' is not a known entity for type '.$uriParts['type']);
+		}
+
+		return $entity;
 	}
 
 	/**
