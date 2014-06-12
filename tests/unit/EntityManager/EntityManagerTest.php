@@ -70,7 +70,7 @@ class EntityManagerTest extends Test
 		$id = 1;
 		$uri = "$type:$id";
 
-		$this->registry->shouldReceive('getProvider')
+		$this->registry->shouldReceive('getProviderInstance')
 			->with($type)
 			->andReturn(new DataProviderStub)
 			->once();

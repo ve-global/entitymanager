@@ -53,7 +53,7 @@ class EntityManager
 
 		// Get our provider
 		/** @var AbstractProvider $provider */
-		$provider = $this->getRegistry()->getProvider($uriParts['type']);
+		$provider = $this->getRegistry()->getProviderInstance($uriParts['type']);
 
 		// Check we can read it
 		if ( ! $provider->canProvide('getOne'))
