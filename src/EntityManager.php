@@ -105,7 +105,20 @@ class EntityManager
 	 */
 	public function getEntityUrl($uri)
 	{
-		return str_replace(':', '/', $uri);
+		$uriParts = $this->getURIParts($uri);
+
+		// Get our provider
+		/** @var AbstractProvider $provider */
+		$provider = $this->getRegistry()->getProviderInstance($uriParts['type']);
+
+		// Check we can read it
+		if ( ! $provider->canProvide('getUrl'))
+		{
+			throw new ResolutionException('Entities of type '.$uriParts['type'].' do not have urls');
+		}
+
+		// Try and load the url
+		return $provider->getUrl($uriParts['identifier']);
 	}
 
 }

@@ -22,4 +22,9 @@ class DataProviderStub extends AbstractProvider
 		return $this->data[$id];
 	}
 
+	public function getUrl($identifier)
+	{
+		return 'product/'.$identifier;
+	}
+
 }

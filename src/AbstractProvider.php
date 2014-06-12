@@ -26,7 +26,8 @@ class AbstractProvider implements ProviderInterface
 		'get',
 		'getOne',
 		'delete',
-		'edit'
+		'edit',
+		'getUrl',
 	];
 
 	/**

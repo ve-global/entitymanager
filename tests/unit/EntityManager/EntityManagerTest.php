@@ -83,6 +83,11 @@ class EntityManagerTest extends Test
 
 	public function testGetEntityUrl()
 	{
+		$this->registry->shouldReceive('getProviderInstance')
+			->with('product')
+			->andReturn(new DataProviderStub)
+			->once();
+
 		$this->assertEquals(
 			'product/1',
 			$this->manager->getEntityUrl('product:1')
