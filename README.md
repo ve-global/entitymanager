@@ -52,7 +52,7 @@ Once we have a provider and a provider registry we can start resolving entities.
 
 At the moment there's only method support for getting an entity and getting an entity URL.
 
-``php
+```php
 <?php
 
 $registry = new ProviderRegistry;
