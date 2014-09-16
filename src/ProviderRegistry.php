@@ -1,7 +1,7 @@
 <?php
 /**
  * @author VeDev Team Kraken
- * @license Closed source, do not copy or distribute in any form.
+ * @license MIT
  * @copyright 2014 Ve Interactive Ltd.
  * @link http://veinteractive.com
  */
