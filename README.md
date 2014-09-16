@@ -1,5 +1,9 @@
 # Entity Manager
 
+[![Build Status](https://travis-ci.org/ve-interactive/entitymanager.svg?branch=master)](https://travis-ci.org/ve-interactive/entitymanager)
+[![Code Coverage](https://scrutinizer-ci.com/g/ve-interactive/entitymanager/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ve-interactive/entitymanager/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ve-interactive/entitymanager/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ve-interactive/entitymanager/?branch=master)
+
 The aim of this package is to provide a framework for managing entities within an application as well as providing
 interfaces to do so. It will tie in with whatever other framework you want to use so there's no restrictions!
 
